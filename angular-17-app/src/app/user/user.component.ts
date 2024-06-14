@@ -9,5 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-
+  username ='Edo';
+  isLoggedIn = true;
 }
