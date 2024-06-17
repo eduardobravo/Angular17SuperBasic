@@ -1,8 +1,23 @@
 <section>
     @if (isLoggedIn) {
-        <p>Bienvenido, {{ username }}</p>
+        <p>Bienvenido, {{ username }}
+            <img 
+            (click)="greet()"
+            alt="photo" 
+            src="https://github.com/eduardobravo.png" />
+        </p>
+        <app-games 
+            (addFavoriteEvent)="getFavorite($event)"
+            username="{{ username }}"></app-games> 
+        <!-- comunicación hijo a padre: (addFavoriteEvent)
+         y después, de padre a hijo: username="{{ username }}" -->
+
+         @if (favGame !== '')
+         {
+            <p>Tu juego favorito es {{ favGame }}</p>
+         }
     } @else {
         <p>Iniciar Sesión</p>
+        <button (click)="isLoggedIn = true">Login</button>
     }
-    <app-games></app-games>
 </section>
