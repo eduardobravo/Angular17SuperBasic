@@ -9,7 +9,7 @@
         <app-games 
             (addFavoriteEvent)="getFavorite($event)"
             username="{{ username }}"></app-games> 
-        <!-- comunicación hijo a padre: (addFavoriteEvent)
+        <!-- Suscribirse: comunicación hijo a padre: (addFavoriteEvent)
          y después, de padre a hijo: username="{{ username }}" -->
 
          @if (favGame !== '')
